@@ -9,7 +9,27 @@ public class Main {
 	
 	public static void main(String [] args){
 		Data[] trainingRecords = readData();
-		new NeuralNetwork().performNeuralNetwork(trainingRecords, hiddenNeuransNumber);;
+		NeuralNetwork neuralNetwork = new NeuralNetwork(trainingRecords, hiddenNeuransNumber);
+		neuralNetwork.train();
+		
+		
+		System.out.println("Hidden Wights\n");
+		for(int i=0;i<neuralNetwork.Whidden.length;++i) {
+			for(int j=0;j<neuralNetwork.Whidden[i].length;++j) {
+				System.out.print(neuralNetwork.Whidden[i][j] + " ");
+			}
+			System.out.println("");
+		}
+		
+		
+		System.out.println("\n\nOutput Wights\n");
+		for(int i=0;i<neuralNetwork.Woutput.length;++i) {
+			for(int j=0;j<neuralNetwork.Woutput[i].length;++j) {
+				System.out.print(neuralNetwork.Woutput[i][j] + " ");
+			}
+			System.out.println("");
+		}
+		
 	}
 	
 	public static Data[] readData(){

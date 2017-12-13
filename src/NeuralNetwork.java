@@ -9,14 +9,10 @@ public class NeuralNetwork {
 	public int L;
 	public double eta;
 	
-	public void performNeuralNetwork(Data[] trainingData, int L){
+	public NeuralNetwork(Data[] trainingData, int L){
 		this.trainingData = Arrays.copyOf(trainingData, trainingData.length);
 		this.L = L;
 		this.eta=0.1;
-		
-		// just write logic of functions here to be able to test
-		// L = hidden layer neurans?
-				
 	}
 
 	public void train() {
